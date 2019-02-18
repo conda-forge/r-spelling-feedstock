@@ -1,4 +1,4 @@
-{% set version = '1.2' %}
+{% set version = "2.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/spelling_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spelling/spelling_{{ version }}.tar.gz
-  sha256: 448772eccd4b7bfd8788a7a8064140cab92ff666134cdc512be00b0b3eefbdbd
+  sha256: c1a209aafd603d6429538a2433a4d0ad467a5c79aac473a7d843c59b11d12fa5
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
