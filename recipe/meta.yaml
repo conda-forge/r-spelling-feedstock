@@ -1,4 +1,4 @@
-{% set version = "2.0" %}
+{% set version = '2.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: spelling_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/spelling_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spelling/spelling_{{ version }}.tar.gz
-  sha256: c1a209aafd603d6429538a2433a4d0ad467a5c79aac473a7d843c59b11d12fa5
+  sha256: 570e3803a7cc97dc43068fed16cad842794044afb00f71426c43fd24705e22c9
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -27,13 +26,13 @@ requirements:
   host:
     - r-base
     - r-commonmark
-    - r-hunspell >=2.9
+    - r-hunspell >=3.0
     - r-knitr
     - r-xml2
   run:
     - r-base
     - r-commonmark
-    - r-hunspell >=2.9
+    - r-hunspell >=3.0
     - r-knitr
     - r-xml2
 
@@ -54,9 +53,25 @@ about:
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: spelling
+# Title: Tools for Spell Checking in R
+# Version: 2.1
+# Authors@R: c( person("Jeroen", "Ooms", , "jeroen@berkeley.edu", role = c("cre", "aut"), comment = c(ORCID = "0000-0002-4035-0289")), person("Jim", "Hester", , "james.hester@rstudio.com", role = "aut"))
+# Description: Spell checking common document formats including latex, markdown, manual pages, and description files. Includes utilities to automate checking of documentation and  vignettes as a unit test during 'R CMD check'. Both British and American English are  supported out of the box and other languages can be added. In addition, packages may define a 'wordlist' to allow custom terminology without having to abuse punctuation.
+# License: MIT + file LICENSE
+# Encoding: UTF-8
+# LazyData: true
+# URL: https://github.com/ropensci/spelling#readme
+# BugReports: https://github.com/ropensci/spelling/issues
+# Imports: commonmark, xml2, hunspell (>= 3.0), knitr
+# Suggests: pdftools
+# RoxygenNote: 6.1.1
+# Language: en-GB
+# NeedsCompilation: no
+# Packaged: 2019-03-11 17:04:24 UTC; jeroen
+# Author: Jeroen Ooms [cre, aut] (<https://orcid.org/0000-0002-4035-0289>), Jim Hester [aut]
+# Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
+# Repository: CRAN
+# Date/Publication: 2019-03-11 17:40:03 UTC
