@@ -1,4 +1,4 @@
-{% set version = '2.1' %}
+{% set version = "2.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -13,8 +13,8 @@ source:
   sha256: 570e3803a7cc97dc43068fed16cad842794044afb00f71426c43fd24705e22c9
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 2
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -22,7 +22,7 @@ build:
 
 requirements:
   build:
-    - {{posix}}zip               # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-commonmark
@@ -44,13 +44,13 @@ test:
 about:
   home: https://github.com/ropensci/spelling#readme
   license: MIT
-  summary: Spell checking common document formats including latex, markdown, manual pages, and
-    description files. Includes utilities to automate checking of documentation and  vignettes
-    as a unit test during 'R CMD check'. Both British and American English are  supported
-    out of the box and other languages can be added. In addition, packages may define
-    a 'wordlist' to allow custom terminology without having to abuse punctuation.
+  summary: Spell checking common document formats including latex, markdown, manual pages, and description files. Includes utilities to automate checking of documentation and  vignettes as a unit test during 'R CMD check'. Both British and American English are  supported out of the box and other languages can be added. In
+    addition, packages may define a 'wordlist' to allow custom terminology without having to abuse punctuation.
   license_family: MIT
 
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
 extra:
   recipe-maintainers:
     - conda-forge/r
