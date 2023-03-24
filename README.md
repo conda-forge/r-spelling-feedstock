@@ -1,11 +1,11 @@
-About r-spelling
-================
+About r-spelling-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-spelling-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ropensci/spelling#readme
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-spelling-feedstock/blob/main/LICENSE.txt)
 
 Summary: Spell checking common document formats including latex, markdown, manual pages, and description files. Includes utilities to automate checking of documentation and  vignettes as a unit test during 'R CMD check'. Both British and American English are  supported out of the box and other languages can be added. In addition, packages may define a 'wordlist' to allow custom terminology without having to abuse punctuation.
 
