@@ -1,4 +1,4 @@
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/spelling_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spelling/spelling_{{ version }}.tar.gz
-  sha256: cdd486bf8d433dbc8ab018f289929c7a094d4618de93d50f55ebf45a2f07aa3b
+  sha256: f7f1f7d3cd421a6bfd6054ac196bdaa15b94610fefe8b9e4ee6165373f139cd7
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
